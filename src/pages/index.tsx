@@ -9,9 +9,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="w-full h-full flex items-center justify-center bg-red-400">
         <p>
-          Landing Page AKTIE
+          Content
         </p>
       </main>
 
