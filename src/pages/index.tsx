@@ -1,7 +1,10 @@
 import Head from "next/head"
 import Menu from "../components/Menu"
+import { useTheme } from "next-themes";
 
 export default function Home() {
+    const { theme } = useTheme();
+
     return (
         <div className="h-screen">
             <Head>
@@ -15,7 +18,7 @@ export default function Home() {
 
             <main className="h-full font-work">
                 <Menu />
-                <div className="w-full h-2/3 flex justify-center">
+                <div className="w-full h-3/4 flex justify-center">
                     <div className="w-1/2 flex flex-col justify-center items-center">
                         <p className="text-3xl whitespace-pre-wrap">
                             <span className="text-primary">
@@ -23,13 +26,13 @@ export default function Home() {
                             </span>
                             para sua empresa,{"\n"}
                             de sistemas complexos até seu primeiro {"\n"}
-                            aplicativo podemos te ajudar a agregar {"\n"}
+                            aplicativo, podemos te ajudar a agregar {"\n"}
                             cada vez mais {""}
                             <span className="text-secondary">
                                 valor ao seu negócio.
                             </span>
                         </p>
-                        <div className="my-6">
+                        <div className="w-full h-36 flex items-center justify-center">
                             <button className="w-40 h-14 mx-6 text-white font-medium text-lg border rounded-full
                                 bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x">
                                 Contate-nos
