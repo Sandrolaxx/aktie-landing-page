@@ -1,8 +1,11 @@
-import Head from "next/head"
-import Menu from "../components/Menu"
 import { useTheme } from "next-themes";
+import Head from "next/head";
+import Image from "next/image";
+import Menu from "../components/Menu";
+import ClebersImage from "../assets/images/cleberMascot.png";
+import ClebersImageDark from "../assets/images/cleberMascotDark.png";
 
-export default function Home() {
+export default function Document() {
     const { theme } = useTheme();
 
     return (
@@ -13,7 +16,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" />
             </Head>
 
             <main className="h-full font-work">
@@ -34,16 +37,22 @@ export default function Home() {
                         </p>
                         <div className="w-full h-36 flex items-center justify-center">
                             <button className="w-40 h-14 mx-6 text-white font-medium text-lg border rounded-full
-                                bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x">
+                                bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x
+                                hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in">
                                 Contate-nos
                             </button>
-                            <button className="w-40 h-14 font-medium text-lg border rounded-full">
+                            <button className="w-40 h-14 font-medium text-lg border rounded-full
+                                hover:-translate-y-1 hover:border-orange-400 duration-100 ease-in">
                                 Veja mais
                             </button>
                         </div>
                     </div>
                     <div className="w-1/2 flex flex-col justify-center items-center">
-                        FOTO
+                        {theme === "dark" ? 
+                            <Image className="rounded-full" src={ClebersImageDark} alt="Cleber Mascot Dark" width={600} height={600} />
+                            :
+                            <Image className="rounded-full" src={ClebersImage} alt="Cleber Mascot" width={600} height={600} />
+                        }
                     </div>
                 </div>
             </main>

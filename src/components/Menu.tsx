@@ -39,28 +39,25 @@ export default function Menu() {
                 </span>
 
                 <div className="relative inline-block w-12 right-14 top-12 align-middle select-none">
-                    <input
-                        type="checkbox"
-                        name="toggle"
-                        id="toggle"
-                        onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-                        className="focus:ring-transparent toggle-checkbox absolute block w-7 h-7
-                        rounded-full appearance-none cursor-pointer bg-red-200"
-                    />
-                    <label
-                        htmlFor="toggle"
-                        className="toggle-label block h-8 -ml-0.5 -mt-0.5 rounded-full bg-orange-100 cursor-pointer"
-                    >
-                        {theme === "dark" ?
-                            <span className="absolute left-[23px] top-0.5">
-                                <MoonIcon width={22} height={22} fill="#FF5F05" />
-                            </span>
-                            :
-                            <span className="absolute left-0.5 top-[3px]">
-                                <SunIcon width={22} height={22} fill="#FF5F05" stroke="#666666" />
-                            </span>
-                        }
-                    </label>
+                    <div className="mb-3">
+                        <div className="relative inline-block w-10 mr-2 align-middle select-none">
+                            <input type="checkbox" name="toggle" id="theme" onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                className="checked:bg-purple-500 outline-none focus:outline-none right-4 checked:right-0
+                                duration-200 ease-in absolute block w-6 h-6 rounded-full bg-red-200 appearance-none cursor-pointer" />
+                            <label htmlFor="theme" className={`block h-6 overflow-hidden rounded-full cursor-pointer
+                                ${theme === "dark" ? "bg-purple-700" : "bg-orange-100"}`}>
+                                {theme === "dark" ?
+                                    <span className="absolute left-[20.1px] top-[2.5px] duration-200 ease-in">
+                                        <MoonIcon width={18} height={18} fill="#FF5F05" />
+                                    </span>
+                                    :
+                                    <span className="absolute left-[3px] top-[3px] duration-200 ease-in">
+                                        <SunIcon width={18} height={18} fill="#FF5F05" stroke="#666666" />
+                                    </span>
+                                }
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
