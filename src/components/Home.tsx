@@ -2,15 +2,16 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import ClebersImage from "../assets/images/cleberMascot.png";
 import ClebersImageDark from "../assets/images/cleberMascotDark.png";
+import ClebersImageMobile from "../assets/images/cleberMascotMobile.png";
 import { isDarkTheme } from "../utils/util";
 
 export default function Home() {
     const { theme } = useTheme();
 
     return (
-        <div className="w-full h-3/4 flex justify-center">
-            <div className="w-1/2 flex flex-col justify-center items-center">
-                <p className="text-3xl whitespace-pre-wrap animate-fade-left">
+        <div className="w-full flex flex-col items-center mt-36 md:flex-row md:h-3/4 md:mt-4">
+            <div className="w-full px-20 flex flex-col justify-center items-center md:px-0">
+                <p className="text-2xl animate-fade-left md:whitespace-pre-wrap lg:text-3xl">
                     <span className="text-primary">
                         Tecnologia de ponta {""}
                     </span>
@@ -22,7 +23,7 @@ export default function Home() {
                         valor ao seu negócio.
                     </span>
                 </p>
-                <div className="w-full h-36 flex items-center justify-center">
+                <div className="w-full h-36 flex items-center justify-center mt-2">
                     <button className="w-40 h-14 mx-6 text-white font-medium text-lg border rounded-full
                                 bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x
                                 hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in animate-fade-up">
@@ -34,12 +35,20 @@ export default function Home() {
                     </button>
                 </div>
             </div>
-            <div className="w-1/2 flex flex-col justify-center items-center animate-fade-right">
+            <div className="w-1/2 flex flex-col justify-center items-center animate-fade-right mt-2 md:mt-0 md:mr-6 lg:w-3/4">
                 {isDarkTheme(theme!) ?
-                    <Image className="rounded-full" priority src={ClebersImageDark} alt="Cleber Mascot Dark" width={600} height={600} />
+                    <Image className="hidden rounded-full md:flex" priority src={ClebersImageDark} alt="Cleber Mascot Dark" width={500} height={520} />
                     :
-                    <Image className="rounded-full" priority src={ClebersImage} alt="Cleber Mascot" width={600} height={600} />
+                    <Image className="hidden rounded-full md:flex" priority src={ClebersImage} alt="Cleber Mascot" width={500} height={520} />
                 }
+                <div className="my-8 animate-fade-up md:hidden text-center">
+                    <p className="text-lg font-medium">
+                        Responsividade, deixa conosco!📱
+                    </p>
+                    <hr className="w-96 h-0.5 bg-primary dark:bg-secondary" />
+                </div>
+                <Image className="rounded-full md:hidden animate-fade-left" priority
+                    src={ClebersImageMobile} alt="Cleber Mascot Responsive" width={500} height={520} />
             </div>
         </div>
     );
