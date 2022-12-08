@@ -24,6 +24,7 @@ module.exports = {
                 "fade-out": "fadeOut 3s",
                 "fade-in-fast": "fadeIn 1s",
                 "fade-in-slow": "fadeIn 5s",
+                "ping-one": "ping 1s cubic-bezier(0, 0, 0.2, 1)",
             },
             keyframes: {
                 gradientY: {

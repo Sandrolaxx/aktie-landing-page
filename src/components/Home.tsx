@@ -43,7 +43,7 @@ export default function Home() {
                 }
                 <div className="my-8 animate-fade-up md:hidden text-center">
                     <p className="text-lg font-medium">
-                        Responsividade, deixa conosco!📱
+                        Responsividade? Deixa conosco!📱
                     </p>
                     <hr className="w-96 h-0.5 bg-primary dark:bg-secondary" />
                 </div>

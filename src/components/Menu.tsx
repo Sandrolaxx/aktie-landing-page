@@ -1,67 +1,114 @@
 import { useTheme } from "next-themes";
+import { useState } from "react";
 import AktieIcon from "../assets/icons/aktLogo.svg";
 import AktieIconDark from "../assets/icons/aktLogoDark.svg";
-import MoonIcon from "../assets/icons/moon.svg";
-import SunIcon from "../assets/icons/sun.svg";
+import CloseIcon from "../assets/icons/close.svg";
+import AktieLogo from "../assets/icons/logo.svg";
+import MenuIcon from "../assets/icons/menu.svg";
 import { isDarkTheme } from "../utils/util";
+import ThemeTogle from "./ThemeTogle";
 
 export default function Menu() {
-    const { theme, setTheme } = useTheme();
+    const { theme } = useTheme();
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     return (
-        <div className="w-full h-32 flex justify-center items-center">
-            <nav className="w-full flex justify-center">
-                <span className="flex items-center justify-center w-1/5 animate-fade-down">
-                    <a href="" className="text-xl font-medium hover:text-primary hover:text-2xl">
-                        Home
-                    </a>
-                </span>
-                <span className="flex items-center justify-center w-1/5 animate-fade-down">
-                    <a href="" className="text-xl font-medium hover:text-primary hover:text-2xl">
-                        Soluções
-                    </a>
-                </span>
-                <span className="w-1/6 flex justify-center animate-fade-up">
-                    {theme === "dark" ?
-                        <AktieIconDark width={112} height={112} />
-                        :
-                        <AktieIcon width={112} height={112} />
-                    }
-                </span>
-                <span className="flex items-center justify-center w-1/5 animate-fade-down">
-                    <a href="" className="text-xl font-medium hover:text-secondary hover:text-2xl">
-                        Time
-                    </a>
-                </span>
-                <span className="flex items-center justify-center w-1/5 animate-fade-down">
-                    <a href="" className="text-xl font-medium hover:text-secondary hover:text-2xl">
-                        Contato
-                    </a>
-                </span>
+        <>
+            <div className="w-full h-32 flex justify-center items-center">
+                <nav className="w-full flex justify-center">
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                        <a href="" className="text-lg hover:text-xl font-medium hover:text-primary 
+                        lg:text-xl lg:hover:text-2xl">
+                            Home
+                        </a>
+                    </span>
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                        <a href="" className="text-lg hover:text-xl font-medium hover:text-primary 
+                        lg:text-xl lg:hover:text-2xl">
+                            Soluções
+                        </a>
+                    </span>
+                    <span className="w-full flex justify-center ml-4 animate-fade-up sm:ml-0 sm:w-1/6">
+                        {isDarkTheme(theme!) ?
+                            <AktieIconDark className="w-20 h-20 lg:w-24 lg:h-24" />
+                            :
+                            <AktieIcon className="w-20 h-20 lg:w-24 lg:h-24" />
+                        }
+                    </span>
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                        <a href="" className="text-lg hover:text-xl font-medium hover:text-secondary 
+                        lg:text-xl lg:hover:text-2xl">
+                            Time
+                        </a>
+                    </span>
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                        <a href="" className="text-lg hover:text-xl font-medium hover:text-secondary 
+                        lg:text-xl lg:hover:text-2xl">
+                            Contato
+                        </a>
+                    </span>
 
-                <div className="relative inline-block w-12 right-14 top-12 align-middle select-none animate-fade-right">
-                    <div className="mb-3">
-                        <div className="relative inline-block w-10 mr-2 align-middle select-none">
-                            <input type="checkbox" name="toggle" id="theme" onChange={() => setTheme(isDarkTheme(theme!) ? "light" : "dark")}
-                                className={`${isDarkTheme(theme!) ? "bg-purple-500 right-0" : "bg-red-200 right-4"}
-                                outline-none focus:outline-none duration-200 ease-in absolute block w-6 h-6 rounded-full
-                                appearance-none cursor-pointer`} />
-                            <label htmlFor="theme" className={`block h-6 overflow-hidden rounded-full cursor-pointer
-                                ${isDarkTheme(theme!) ? "bg-purple-700" : "bg-orange-100"}`}>
-                                {isDarkTheme(theme!) ?
-                                    <span className="absolute left-[20.1px] top-[2.5px] duration-200 ease-in">
-                                        <MoonIcon width={18} height={18} fill="#FF5F05" />
-                                    </span>
-                                    :
-                                    <span className="absolute left-[3px] top-[3px] duration-200 ease-in">
-                                        <SunIcon width={18} height={18} fill="#FF5F05" stroke="#666666" />
-                                    </span>
-                                }
-                            </label>
-                        </div>
+                    <div className="hidden sm:flex animate-fade-right">
+                        <ThemeTogle />
                     </div>
+                </nav>
+            </div>
+            {showMobileMenu ?
+                <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="absolute z-10 top-12 right-8">
+                    <CloseIcon className="w-8 h-8 dark:stroke-primary sm:hidden" />
+                </button>
+                :
+                <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="absolute z-10 top-12 right-8">
+                    <MenuIcon className="w-8 h-8 dark:stroke-primary sm:hidden" />
+                </button>
+            }
+            {showMobileMenu &&
+                <div className="flex w-full h-full absolute inset-0 flex-col bg-white dark:bg-neutral-900 sm:hidden">
+                    <span className="w-full flex flex-col items-center mt-6 animate-fade-down">
+                        <AktieLogo className="w-20 h-20" />
+                        <span className="-mt-4">
+                            <ThemeTogle />
+                        </span>
+                    </span>
+                    <nav className="w-full h-3/4 flex flex-col justify-center animate-fade-in-fast">
+                        <button className={`flex flex-col w-full h-20 justify-center items-center`}>
+                            <a href="" className="group text-lg hover:text-xl font-medium
+                                hover:text-primary lg:text-xl lg:hover:text-2xl">
+                                Home
+                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-primary 
+                                    dark:bg-secondary animate-fade-up" />
+                            </a>
+                        </button>
+                        <button className={`flex w-full h-20 justify-center items-center`}>
+                            <a href="" className="group text-lg hover:text-xl font-medium
+                                hover:text-primary lg:text-xl lg:hover:text-2xl">
+                                Soluções
+                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-primary 
+                                    dark:bg-secondary animate-fade-up" />
+                            </a>
+                        </button>
+                        <button className={`flex w-full h-20 justify-center items-center`}>
+                            <a href="" className="group text-lg hover:text-xl font-medium
+                                hover:text-secondary lg:text-xl lg:hover:text-2xl">
+                                Time
+                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-secondary 
+                                    dark:bg-primary animate-fade-up" />
+                            </a>
+                        </button>
+                        <button className={`flex w-full h-20 justify-center items-center`}>
+                            <a href="" className="group text-lg hover:text-xl font-medium
+                                hover:text-secondary lg:text-xl lg:hover:text-2xl">
+                                Contato
+                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-secondary 
+                                    dark:bg-primary animate-fade-up" />
+                            </a>
+                        </button>
+                    </nav>
+                    <footer className="absolute bottom-6 w-full flex justify-center animate-fade-up">
+                        Powered by AKTIE TECH
+                    </footer>
                 </div>
-            </nav>
-        </div>
+            }
+        </>
     );
 }
