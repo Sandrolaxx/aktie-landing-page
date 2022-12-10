@@ -35,7 +35,7 @@ export default function Home() {
                     </button>
                 </div>
             </div>
-            <div className="w-1/2 flex flex-col justify-center items-center animate-fade-right mt-2 md:mt-0 md:mr-6 lg:w-3/4">
+            <div className="w-1/2 flex flex-col justify-center items-center animate-fade-in mt-2 md:mt-0 md:mr-6 lg:w-3/4">
                 {isDarkTheme(theme!) ?
                     <Image className="hidden rounded-full md:flex" priority src={ClebersImageDark} alt="Cleber Mascot Dark" width={500} height={520} />
                     :
