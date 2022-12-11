@@ -1,7 +1,6 @@
 export interface LottieProps {
     animationFile: unknown;
-    withActions?: boolean;
-    actions?: {
+    actions: {
         frames: [number] | [number, number];
         type: "seek" | "play" | "stop" | "loop";
         visibility?: [number, number];
