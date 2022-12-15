@@ -14,7 +14,7 @@ export default function Menu() {
 
     return (
         <>
-            <div className="w-full h-32 flex justify-center items-center">
+            <div className={`w-full h-32 justify-center items-center bg-dark-mode ${showMobileMenu ? 'flex' : 'fixed'}`}>
                 <nav className="w-full flex justify-center">
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
                         <a href="" className="text-lg hover:text-xl font-medium hover:text-primary 
@@ -23,7 +23,7 @@ export default function Menu() {
                         </a>
                     </span>
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
-                        <a href="" className="text-lg hover:text-xl font-medium hover:text-primary 
+                        <a href="#solutions" className="text-lg hover:text-xl font-medium hover:text-primary 
                             lg:text-xl lg:hover:text-2xl">
                             Soluções
                         </a>
@@ -80,7 +80,7 @@ export default function Menu() {
                             </a>
                         </button>
                         <button className={`flex w-full h-20 justify-center items-center`}>
-                            <a href="" className="group text-lg hover:text-xl font-medium
+                            <a href="#solutions" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-primary lg:text-xl lg:hover:text-2xl">
                                 Soluções
                                 <hr className="hidden group-hover:flex w-32 h-0.5 bg-primary 

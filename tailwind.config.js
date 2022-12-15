@@ -8,6 +8,7 @@ module.exports = {
             colors: {
                 "primary": "#FF5F05",
                 "secondary": "#9453E5",
+                "dark-mode": "#111213"
             },
             fontFamily: {
                 "sans": ["Work Sans", ...defaultTheme.fontFamily.sans]

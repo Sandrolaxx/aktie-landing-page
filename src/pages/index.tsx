@@ -16,7 +16,7 @@ export default function Main() {
     }
 
     return (
-        <div className="h-screen">
+        <div className="h-screen bg-red-300">
             <Head>
                 <title>AKTIE TECH - Tecnologia de ponta para seu negócio</title>
                 <meta name="description" content="Desenvolvimento de sites, sistemas e aplicativos sob demanda." />

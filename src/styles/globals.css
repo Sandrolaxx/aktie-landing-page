@@ -22,6 +22,7 @@ a {
 @layer base {
     html {
       font-family: "Exo", sans-serif, system-ui;
+      scroll-behavior: smooth;
     }
 }
 

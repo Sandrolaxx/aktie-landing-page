@@ -9,7 +9,7 @@ export default function Home() {
     const { theme } = useTheme();
 
     return (
-        <div className="w-full flex flex-col items-center mt-36 md:flex-row md:h-3/4 md:mt-4">
+        <div className="w-full flex flex-col items-center md:flex-row md:h-3/4">
             <div className="w-full px-20 flex flex-col justify-center items-center md:px-0">
                 <p className="text-2xl animate-fade-left md:whitespace-pre-wrap lg:text-3xl">
                     <span className="text-primary">
