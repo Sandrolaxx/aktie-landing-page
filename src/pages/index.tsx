@@ -6,6 +6,7 @@ import Solutions from "../components/Solutions";
 
 export default function Main() {
     const [mounted, setMounted] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -16,14 +17,14 @@ export default function Main() {
     }
 
     return (
-        <div className="h-screen bg-red-300">
+        <div className="h-screen">
             <Head>
                 <title>AKTIE TECH - Tecnologia de ponta para seu negócio</title>
                 <meta name="description" content="Desenvolvimento de sites, sistemas e aplicativos sob demanda." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="h-full">
-                <Menu />
+            <main className={`h-full ${showMobileMenu && 'overflow-y-hidden'}`}>
+                <Menu showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu} />
                 <Home />
                 <Solutions />
                 <footer className="h-14 bottom-14 flex justify-center pt-4">

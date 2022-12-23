@@ -1,21 +1,20 @@
 import { useTheme } from "next-themes";
-import { useState } from "react";
 import AktieIcon from "../assets/icons/aktLogo.svg";
 import AktieIconDark from "../assets/icons/aktLogoDark.svg";
 import CloseIcon from "../assets/icons/close.svg";
 import AktieLogo from "../assets/icons/logo.svg";
 import MenuIcon from "../assets/icons/menu.svg";
+import { MenuProps } from "../utils/types";
 import { isDarkTheme } from "../utils/util";
 import ThemeTogle from "./ThemeTogle";
 
-export default function Menu() {
+export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
     const { theme } = useTheme();
-    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     return (
         <>
-            <div className={`w-full h-32 justify-center items-center bg-dark-mode ${showMobileMenu ? 'flex' : 'fixed'}`}>
-                <nav className="w-full flex justify-center">
+            <div className={`w-full fixed z-10 h-28 justify-center items-center bg-white dark:bg-dark-mode md:h-32`}>
+                <nav className="w-full h-32 flex justify-center">
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
                         <a href="" className="text-lg hover:text-xl font-medium hover:text-primary 
                             lg:text-xl lg:hover:text-2xl">
@@ -28,7 +27,7 @@ export default function Menu() {
                             Soluções
                         </a>
                     </span>
-                    <span className="w-full flex justify-center ml-16 animate-fade-up mt-2 sm:ml-0 sm:w-1/6">
+                    <span className="w-full flex justify-center animate-fade-up mt-2 sm:ml-0 sm:w-1/6">
                         {isDarkTheme(theme!) ?
                             <AktieIconDark className="w-20 h-20 lg:w-24 lg:h-24" />
                             :
@@ -53,11 +52,11 @@ export default function Menu() {
                     </div>
                 </nav>
                 {showMobileMenu ?
-                    <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="absolute z-10 top-12 right-8">
+                    <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="absolute z-10 top-10 right-8">
                         <CloseIcon className="w-8 h-8 dark:stroke-primary sm:hidden" />
                     </button>
                     :
-                    <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="mr-4 sm:mr-0">
+                    <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="absolute z-10 top-10 right-8">
                         <MenuIcon className="w-8 h-8 dark:stroke-primary sm:hidden" />
                     </button>
                 }
@@ -109,6 +108,7 @@ export default function Menu() {
                     </footer>
                 </div>
             }
+            <div className="h-56 md:h-32" />
         </>
     );
 }

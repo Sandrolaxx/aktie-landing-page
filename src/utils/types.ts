@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface LottieProps {
     animationFile: unknown;
     actions: {
@@ -6,4 +8,9 @@ export interface LottieProps {
         visibility?: [number, number];
         position?: { [axis in "x" | "y"]: number | [number, number] };
     };
+}
+
+export interface MenuProps {
+    showMobileMenu: boolean;
+    setShowMobileMenu: Dispatch<SetStateAction<boolean>>;
 }
