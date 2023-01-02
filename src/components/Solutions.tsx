@@ -7,7 +7,7 @@ import LottieWithInteractivity from "../components/LottieWithInteractivity";
 export default function Solutions() {
     return (
         <>
-            <div id="solutions" className="w-full h-full flex flex-col items-center">
+            <div id="solutions" className="w-full h-default flex flex-col items-center">
                 <span className="w-3/4 h-24 pt-24 animate-fade-up">
                     <hr className="h-0.5 bg-primary dark:bg-secondary rounded-full" />
                 </span>
@@ -24,7 +24,7 @@ export default function Solutions() {
                 </div>
             </div>
 
-            <div className="w-full h-full flex flex-col items-center">
+            <div className="w-full h-default flex flex-col items-center">
                 <span className="w-3/4 h-24 pt-24">
                     <hr className="h-0.5 bg-primary dark:bg-secondary rounded-full" />
                 </span>
@@ -47,7 +47,7 @@ export default function Solutions() {
                 </div>
             </div>
 
-            <div className="w-full h-full flex flex-col items-center">
+            <div className="w-full h-default flex flex-col items-center">
                 <span className="w-3/4 h-24 pt-24">
                     <hr className="h-0.5 bg-primary dark:bg-secondary rounded-full" />
                 </span>

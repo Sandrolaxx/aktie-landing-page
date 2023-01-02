@@ -16,7 +16,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
             <div className={`w-full fixed z-10 h-28 justify-center items-center bg-white dark:bg-dark-mode md:h-32`}>
                 <nav className="w-full h-32 flex justify-center">
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
-                        <a href="" className="text-lg hover:text-xl font-medium hover:text-primary 
+                        <a href="#home" className="text-lg hover:text-xl font-medium hover:text-primary 
                             lg:text-xl lg:hover:text-2xl">
                             Home
                         </a>
@@ -71,7 +71,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
                     </span>
                     <nav className="w-full h-3/4 flex flex-col justify-center animate-fade-in-fast">
                         <button className={`flex flex-col w-full h-20 justify-center items-center`}>
-                            <a href="" className="group text-lg hover:text-xl font-medium
+                            <a href="#home" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-primary lg:text-xl lg:hover:text-2xl">
                                 Home
                                 <hr className="hidden group-hover:flex w-32 h-0.5 bg-primary 
@@ -108,7 +108,6 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
                     </footer>
                 </div>
             }
-            <div className="h-56 md:h-32" />
         </>
     );
 }
