@@ -35,7 +35,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
                         }
                     </span>
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
-                        <a href="" className="text-lg hover:text-xl font-medium hover:text-secondary 
+                        <a href="#team" className="text-lg hover:text-xl font-medium hover:text-secondary 
                             lg:text-xl lg:hover:text-2xl">
                             Time
                         </a>
@@ -87,7 +87,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
                             </a>
                         </button>
                         <button className={`flex w-full h-20 justify-center items-center`}>
-                            <a href="" className="group text-lg hover:text-xl font-medium
+                            <a href="#team" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-secondary lg:text-xl lg:hover:text-2xl">
                                 Time
                                 <hr className="hidden group-hover:flex w-32 h-0.5 bg-secondary 

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Home from "../components/Home";
 import Menu from "../components/Menu";
 import Solutions from "../components/Solutions";
+import Team from "../components/Team";
 
 export default function Main() {
     const [mounted, setMounted] = useState(false);
@@ -27,6 +28,7 @@ export default function Main() {
                 <Menu showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu} />
                 <Home />
                 <Solutions />
+                <Team />
                 <footer className="h-14 bottom-14 flex justify-center pt-4">
                     Powered by AKTIE TECH
                 </footer>
