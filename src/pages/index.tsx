@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Contact from "../components/Contact";
 import Home from "../components/Home";
 import Menu from "../components/Menu";
 import Solutions from "../components/Solutions";
@@ -29,6 +30,7 @@ export default function Main() {
                 <Home />
                 <Solutions />
                 <Team />
+                <Contact />
                 <footer className="h-14 bottom-14 flex justify-center pt-4">
                     Powered by AKTIE TECH
                 </footer>
