@@ -10,10 +10,10 @@ export default function Home() {
 
     return (
         <div className="w-full h-default" id="home">
-            <div className="h-52 md:h-24" />
+            <div className="h-40 sm:h-56 md:h-24" />
             <div className="w-full flex flex-col items-center md:flex-row md:h-default">
-                <div className="w-full px-20 flex flex-col justify-center items-center md:px-0">
-                    <p className="text-2xl animate-fade-left md:whitespace-pre-wrap lg:text-3xl">
+                <div className="w-full px-12 flex flex-col justify-center items-center md:px-0">
+                    <p className="text-xl animate-fade-left md:whitespace-pre-wrap lg:text-2xl">
                         <span className="text-primary">
                             Tecnologia de ponta {""}
                         </span>
@@ -26,13 +26,13 @@ export default function Home() {
                         </span>
                     </p>
                     <div className="w-full h-36 flex items-center justify-center mt-2">
-                        <button className="w-40 h-14 mx-6 text-white font-medium text-lg border rounded-full
-                                bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x
-                                hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in animate-fade-up">
+                        <button className="w-40 h-14 mx-6 text-white font-medium border rounded-full whitespace-nowrap
+                                bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x p-2
+                                hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in animate-fade-up sm:text-lg">
                             Contate-nos
                         </button>
-                        <button className="w-40 h-14 font-medium text-lg border rounded-full
-                                hover:-translate-y-1 hover:border-orange-400 duration-100 ease-in animate-fade-up">
+                        <button className="w-40 h-14 font-medium border rounded-full whitespace-nowrap p-2 sm:text-lg
+                                hover:-translate-y-1 hover:border-orange-400 duration-100 ease-in animate-fade-up ">
                             Veja mais
                         </button>
                     </div>
