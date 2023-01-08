@@ -25,15 +25,19 @@ export default function Home() {
                             valor ao seu negócio.
                         </span>
                     </p>
-                    <div className="w-full h-36 flex items-center justify-center mt-2">
-                        <button className="w-40 h-14 mx-6 text-white font-medium border rounded-full whitespace-nowrap
-                                bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x p-2
-                                hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in animate-fade-up sm:text-lg">
-                            Contate-nos
-                        </button>
-                        <button className="w-40 h-14 font-medium border rounded-full whitespace-nowrap p-2 sm:text-lg
+                    <div className="w-full h-36 flex justify-center items-center mt-2">
+                        <span className="w-40 h-14 flex justify-center items-center mx-6 border rounded-full
+                                bg-gradient-to-r from-primary via-red-500 to-secondary animate-gradient-x
+                                hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in animate-fade-up">
+                            <a href="#contact" className="text-white font-medium sm:text-lg whitespace-nowrap">
+                                Contate-nos
+                            </a>
+                        </span>
+                        <button className="w-40 h-14 flex justify-center items-center border rounded-full
                                 hover:-translate-y-1 hover:border-orange-400 duration-100 ease-in animate-fade-up ">
-                            Veja mais
+                            <a href="#solutions" className="font-medium sm:text-lg whitespace-nowrap">
+                                Veja mais
+                            </a>
                         </button>
                     </div>
                 </div>

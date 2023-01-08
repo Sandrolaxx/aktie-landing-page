@@ -13,8 +13,7 @@ export default function Team() {
                 <hr className="h-0.5 bg-primary dark:bg-secondary rounded-full" />
             </span>
             <div className="w-full h-full flex flex-col justify-center items-center">
-                <p className="text-2xl py-4 text-center md:whitespace-pre-wrap 
-                        lg:text-left lg:text-3xl sm:py-10">
+                <p className="text-2xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-3xl sm:py-10">
                     Time multidisciplinar
                 </p>
                 <div className="w-full h-full grid grid-cols-2 gap-12 place-items-center md:gap-6 md:grid-cols-3">

@@ -7,20 +7,24 @@ import LottieWithInteractivity from "../components/LottieWithInteractivity";
 export default function Solutions() {
     return (
         <>
-            <div id="solutions" className="w-full h-default mt-24 flex flex-col items-center sm:mt-0">
-                <span className="w-3/4 h-24 mt-24 animate-fade-up">
+            <div id="solutions" className="w-full h-default mt-28 flex flex-col items-center sm:mt-0">
+                <span className="w-3/4 h-24 pt-24 animate-fade-up">
                     <hr className="h-0.5 bg-primary dark:bg-secondary rounded-full" />
                 </span>
-                <div className="w-full h-full flex flex-col justify-center items-center 
-                    lg:flex-row lg:justify-evenly">
-                    <div className="w-full md:w-5/6 lg:w-1/2 flex justify-center items-center">
-                        <Lottie animationData={appsAnimation} />
-                    </div>
-                    <p className="text-xl px-20 text-center md:whitespace-pre-wrap 
-                        lg:text-left lg:text-2xl lg:px-0">
-                        Desenvolva agora mesmo um app {"\n"}
-                        personalizado para sua solução.
+                <div className="w-full h-full flex flex-col items-center">
+                    <p className="text-2xl pt-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-3xl sm:pt-10">
+                        Soluções
                     </p>
+                    <div className="w-full h-full flex flex-col justify-center items-center lg:flex-row lg:justify-evenly">
+                        <div className="w-full sm:-mt-28 md:w-5/6 lg:-mt-16 lg:w-1/2">
+                            <Lottie animationData={appsAnimation} />
+                        </div>
+                        <p className="text-base sm:text-xl px-16 text-center md:whitespace-pre-wrap 
+                            lg:text-left lg:text-2xl lg:px-0 lg:-mt-20 md:self-center">
+                            Desenvolva agora mesmo um app {"\n"}
+                            personalizado para sua solução.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -30,7 +34,7 @@ export default function Solutions() {
                 </span>
                 <div className="w-full h-full flex flex-col justify-center items-center 
                     lg:flex-row lg:justify-evenly">
-                    <p className="text-xl px-20 text-center md:whitespace-pre-wrap 
+                    <p className="text-base sm:text-xl px-16 text-center md:whitespace-pre-wrap 
                         mb-20 lg:text-left lg:text-2xl lg:px-0 lg:mb-0">
                         Automatize os processos e deixe seus{"\n"}
                         colaboradores livres para atuarem em{"\n"}
@@ -61,7 +65,7 @@ export default function Solutions() {
                                 frames: [0, 481]
                             }} />
                     </div>
-                    <p className="text-xl px-20 text-center md:whitespace-pre-wrap 
+                    <p className="text-base sm:text-xl px-16 text-center md:whitespace-pre-wrap 
                         lg:text-left lg:text-2xl lg:px-0 lg:mb-0">
                         Utilize os dados ao seu favor! {"\n"}
                         Se torne uma empresa Data Driven e {"\n"}
