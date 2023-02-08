@@ -15,7 +15,7 @@ export default function Contact() {
                 </p>
                 <form onSubmit={handeleSubmit} >
                     <div className="w-full px-6">
-                        <div className="grid max-w-2xl grid-cols-2 gap-4 m-auto">
+                        <div className="grid max-w-3xl grid-cols-2 gap-4 m-auto">
                             <div className="col-span-2 lg:col-span-1">
                                 <div className=" relative ">
                                     <input id="name" type="text" onChange={handleChange}

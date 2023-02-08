@@ -5,6 +5,7 @@ import Home from "../components/Home";
 import Menu from "../components/Menu";
 import Solutions from "../components/Solutions";
 import Team from "../components/Team";
+import Technics from "../components/Technics";
 
 export default function Main() {
     const [mounted, setMounted] = useState(false);
@@ -30,6 +31,7 @@ export default function Main() {
                 <Home />
                 <Solutions />
                 <Team />
+                <Technics />
                 <Contact />
                 <footer className="h-14 bottom-14 flex justify-center pt-4">
                     Powered by AKTIE TECH
