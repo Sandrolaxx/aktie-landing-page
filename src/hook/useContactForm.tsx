@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { EmailData } from "../utils/types";
 
-const useContactForm = () => {
-  const [values, setValues] = useState({
-    nome: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setValues(prevState => {
-      return {
-        ...prevState,
-        [e.target.id]: e.target.value,
-      };
+export default function useContactForm() {
+    const [formFields, setFormFields] = useState<EmailData>({
+        name: "",
+        email: "",
+        message: "",
     });
-  };
 
-  return { values, handleChange };
+    function handleChange(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) {
+        setFormFields(prevState => {
+            return {
+                ...prevState,
+                [e.target.id]: e.target.value,
+            };
+        });
+    };
+
+    function resetFields() {
+        setFormFields({
+            name: "",
+            email: "",
+            message: "",
+        });
+    }
+
+    return { formFields, handleChange, resetFields };
 };
-
-export default useContactForm;

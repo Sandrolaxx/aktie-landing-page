@@ -1,38 +1,32 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
-const nodemailer = require('nodemailer')
+import type { NextApiRequest, NextApiResponse } from "next";
+const nodemailer = require("nodemailer");
 
-type Data = {
-  name: string
-}
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    const message = {
+        from: process.env.NEXT_PUBLIC_SMTP_EMAIL,
+        to: req.body.email,
+        subject: "informação",
+        text: req.body.message,
+        html: `<p>${req.body.message}</p>`,
+    };
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+    const transporter = nodemailer.createTransport({
+        host: process.env.NEXT_PUBLIC_SMTP_HOST,
+        port: 587,
+        secure: false,
+        auth: {
+            user: process.env.NEXT_PUBLIC_SMTP_EMAIL,
+            pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
+        },
+    });
 
-  const message = {
-    from: req.body.email,
-    to: process.env.GMAIL_EMAIL_ANDRESS,
-    subject: 'informação',
-    text: req.body.message,
-    html: `<p>${req.body.message}</p>`,
-  }
+    try {
+        await transporter.sendMail(message);
 
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    host: process.env.EMAIL_HOST,
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.GMAIL_EMAIL_ADDRESS,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  });
+        res.status(200).end();
+    } catch (error) {
+        const errorMsg = "Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente!😬";
 
-  await transporter.sendMail(message)
-  console.log(message)
-  console.log(transporter)
-
-  //res.status(200).json({ name: 'John Doe' })
+        res.status(500).json({errorMsg: errorMsg});
+    }
 }

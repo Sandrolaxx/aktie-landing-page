@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface LottieProps {
+//Interface's
+export interface ILottieProps {
     animationFile: unknown;
     actions: {
         frames: [number] | [number, number];
@@ -10,7 +11,18 @@ export interface LottieProps {
     };
 }
 
-export interface MenuProps {
+export interface IMenuProps {
     showMobileMenu: boolean;
     setShowMobileMenu: Dispatch<SetStateAction<boolean>>;
+}
+
+//Types's
+export type EmailData = {
+    name: string
+    email: string
+    message: string
+}
+
+export type ApiError = {
+    errorMsg: string
 }
