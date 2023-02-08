@@ -4,11 +4,11 @@ import AktieIconDark from "../assets/icons/aktLogoDark.svg";
 import CloseIcon from "../assets/icons/close.svg";
 import AktieLogo from "../assets/icons/logo.svg";
 import MenuIcon from "../assets/icons/menu.svg";
-import { MenuProps } from "../utils/types";
+import { IMenuProps } from "../utils/types";
 import { isDarkTheme } from "../utils/util";
 import ThemeTogle from "./ThemeTogle";
 
-export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
+export default function Menu({ showMobileMenu, setShowMobileMenu }: IMenuProps) {
     const { theme } = useTheme();
 
     return (
@@ -62,7 +62,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: MenuProps) {
                 }
             </div>
             {showMobileMenu &&
-                <div className="flex w-full h-full absolute inset-0 flex-col bg-white dark:bg-neutral-900 sm:hidden">
+                <div className="flex w-full h-screen absolute inset-0 flex-col overflow-y-hidden bg-white dark:bg-neutral-900 sm:hidden">
                     <span className="w-full flex flex-col items-center mt-6 animate-fade-down">
                         <AktieLogo className="w-20 h-20" />
                         <span className="-mt-4">

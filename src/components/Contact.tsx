@@ -1,60 +1,8 @@
-import { FormEvent, useRef, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { toast } from "react-toastify";
 import useContactForm from "../hook/useContactForm";
-import sendContactMail from "../service/sendEmail";
-import { getToastError, getToastSuccess, isNullOrEmpty } from "../utils/util";
+import ReCaptcha from "./ReCaptcha";
 
 export default function Contact() {
-    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
-    const { formFields, handleChange, resetFields } = useContactForm();
-    const [isChallengeCompleted, setChallengeCompleted] = useState(false);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
-
-    function isValidForm() {
-        const isValidFields = !isNullOrEmpty(formFields.name)
-            && !isNullOrEmpty(formFields.email)
-            && (!isNullOrEmpty(formFields.message) && formFields.message.length > 6);
-
-        return isValidFields && isChallengeCompleted;
-    }
-
-    function handleCompleteChallenge(token: string | null) {
-        if (!token) {
-            setChallengeCompleted(false);
-            return;
-        }
-
-        setChallengeCompleted(true);
-    }
-
-    async function handeleSubmit(e: FormEvent) {
-        e.preventDefault();
-
-        if (!isValidForm()) {
-            return;
-        }
-
-        setChallengeCompleted(false);
-
-        await handleSendEmail();
-
-        resetFields();
-        recaptchaRef.current?.reset();
-    }
-
-    async function handleSendEmail() {
-        const toastify = toast.loading("Enviando e-mail...📨");
-
-        try {
-            await sendContactMail(formFields);
-
-            toast.update(toastify, getToastSuccess("Mensagem enviada com sucesso!✨"))
-        } catch (error: any) {
-            toast.update(toastify, getToastError(error.message));
-        }
-    }
-
+    const { formFields, handleChange, handeleSubmit, handleCompleteChallenge, isValidForm, recaptchaRef } = useContactForm();
 
     return (
         <div id="contact" className="w-full h-default flex flex-col items-center mt-24 sm:mt-0">
@@ -66,7 +14,7 @@ export default function Contact() {
                     Contate-nos
                 </p>
                 <form onSubmit={handeleSubmit} >
-                    <div className="w-full">
+                    <div className="w-full px-6">
                         <div className="grid max-w-2xl grid-cols-2 gap-4 m-auto">
                             <div className="col-span-2 lg:col-span-1">
                                 <div className=" relative ">
@@ -111,7 +59,7 @@ export default function Contact() {
                             </div>
                         </div>
                         <span className="w-full flex justify-center mt-6">
-                            <ReCAPTCHA ref={recaptchaRef} sitekey={siteKey} onChange={handleCompleteChallenge} />
+                            <ReCaptcha refCaptcha={recaptchaRef} onCompleteChallenge={handleCompleteChallenge} />
                         </span>
                     </div>
                 </form>

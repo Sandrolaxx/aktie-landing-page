@@ -1,4 +1,4 @@
-import { ApiError, EmailData } from "../utils/types";
+import { EmailData } from "../utils/types";
 
 export default async function sendContactMail(data: EmailData): Promise<void> {
     const request: RequestInit = {

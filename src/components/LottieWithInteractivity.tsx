@@ -1,7 +1,7 @@
 import { useLottie, useLottieInteractivity } from "lottie-react";
-import { LottieProps } from "../utils/types";
+import { ILottieProps } from "../utils/types";
 
-export default function LottieWithInteractivity(props: LottieProps) {
+export default function LottieWithInteractivity(props: ILottieProps) {
     const lottieObj = useLottie({ animationData: props.animationFile });
 
     const lottieAnimated = useLottieInteractivity({
