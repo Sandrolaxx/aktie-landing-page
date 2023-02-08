@@ -7,6 +7,9 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 export default function Contact() {
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
+    const { formFields, handleChange } = useContactForm();
+    const [isChallengeCompleted, setChallengeCompleted] = useState(false);
 
   const { values, handleChange } = useContactForm()
   const recaptchaRef = React.useRef<ReCAPTCHA>(null);
