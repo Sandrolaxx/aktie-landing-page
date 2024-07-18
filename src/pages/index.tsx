@@ -23,7 +23,7 @@ export default function Main() {
         <div className="h-screen">
             <Head>
                 <title>AKTIE TECH - Tecnologia de ponta para seu negócio</title>
-                <meta name="description" content="Desenvolvimento de sites, sistemas e aplicativos sob demanda." />
+                <meta name="description" content="Desenvolvimento de sites, sistemas e aplicativos sob demanda em Cascavel e Região." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`h-full ${showMobileMenu && 'overflow-y-hidden'}`}>
