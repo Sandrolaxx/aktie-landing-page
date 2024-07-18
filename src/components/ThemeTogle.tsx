@@ -7,7 +7,7 @@ export default function ThemeTogle() {
     const { theme, setTheme } = useTheme();
 
     return (
-        <div className="relative w-10 top-12 mt-1 right-0 lg:right-10">
+        <div className="w-10">
             <div className="relative inline-block w-9 align-middle select-none">
                 <input type="checkbox" name="toggle" id="theme" onChange={() => setTheme(isDarkTheme(theme!) ? "light" : "dark")}
                     className={`${isDarkTheme(theme!) ? "bg-purple-500 right-0" : "bg-red-200 left-0"}

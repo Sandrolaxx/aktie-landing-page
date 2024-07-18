@@ -7,21 +7,32 @@ import MenuIcon from "../assets/icons/menu.svg";
 import { IMenuProps } from "../utils/types";
 import { isDarkTheme } from "../utils/util";
 import ThemeTogle from "./ThemeTogle";
+import { useEffect, useState } from "react";
 
 export default function Menu({ showMobileMenu, setShowMobileMenu }: IMenuProps) {
     const { theme } = useTheme();
+    const [small, setSmall] = useState(false);
+    
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+          window.addEventListener("scroll", () =>
+            setSmall(window.pageYOffset > 80)
+          );
+        }
+      }, []);
 
     return (
         <>
-            <div className={`w-full fixed z-10 h-28 justify-center items-center bg-white dark:bg-dark-mode md:h-32`}>
-                <nav className="w-full h-32 flex justify-center">
-                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+            <div className={`w-full fixed z-10 h-28 justify-center items-center bg-white dark:bg-dark-mode md:h-32
+                ${small && 'md:h-20 pt-1 oppasity-200'}`}>
+                <nav className="w-full h-full flex justify-center">
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down">
                         <a href="#home" className="text-lg hover:text-xl font-medium hover:text-primary 
                             lg:text-xl lg:hover:text-2xl">
                             Home
                         </a>
                     </span>
-                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down">
                         <a href="#solutions" className="text-lg hover:text-xl font-medium hover:text-primary 
                             lg:text-xl lg:hover:text-2xl">
                             Soluções
@@ -29,25 +40,25 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: IMenuProps) 
                     </span>
                     <span className="w-full flex justify-center animate-fade-up mt-2 sm:ml-0 sm:w-1/6">
                         {isDarkTheme(theme!) ?
-                            <AktieIconDark className="w-20 h-20 lg:w-24 lg:h-24" />
+                            <AktieIconDark className={`w-20 h-20 lg:w-24 lg:h-24 ${small && 'h-10 w-10 lg:w-14 lg:h-14'}`} />
                             :
-                            <AktieIcon className="w-20 h-20 lg:w-24 lg:h-24" />
+                            <AktieIcon className={`w-20 h-20 lg:w-24 lg:h-24 ${small && 'h-10 w-10 lg:w-14 lg:h-12'}`} />
                         }
                     </span>
-                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down">
                         <a href="#team" className="text-lg hover:text-xl font-medium hover:text-secondary 
                             lg:text-xl lg:hover:text-2xl">
                             Time
                         </a>
                     </span>
-                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down lg:w-1/5">
+                    <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down">
                         <a href="#contact" className="text-lg hover:text-xl font-medium hover:text-secondary 
                             lg:text-xl lg:hover:text-2xl">
                             Contato
                         </a>
                     </span>
 
-                    <div className="hidden sm:flex animate-fade-right">
+                    <div className={`hidden sm:flex items-center animate-fade-down relative left-12`}>
                         <ThemeTogle />
                     </div>
                 </nav>
@@ -65,7 +76,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: IMenuProps) 
                 <div className="flex w-full h-screen absolute inset-0 flex-col overflow-y-hidden bg-white dark:bg-neutral-900 sm:hidden">
                     <span className="w-full flex flex-col items-center mt-6 animate-fade-down">
                         <AktieLogo className="w-20 h-20" />
-                        <span className="-mt-4">
+                        <span className="pt-6">
                             <ThemeTogle />
                         </span>
                     </span>
