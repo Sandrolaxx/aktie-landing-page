@@ -1,9 +1,12 @@
+import sgMail from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from "next";
-const nodemailer = require("nodemailer");
+
+sgMail.setApiKey(process.env.SENDGRID_KEY ?? "");
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+
     const message = {
-        from: "contato@aktietech.com",
+        from: process.env.SENDGRID_MAIL ?? "",
         to: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
         subject: "Contato landing page AKTIE",
         text: req.body.email + req.body.message,
@@ -15,18 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             `,
     };
 
-    const transporter = nodemailer.createTransport({
-        host: process.env.NEXT_PUBLIC_SMTP_HOST,
-        port: 587,
-        secure: false,
-        auth: {
-            user: process.env.NEXT_PUBLIC_SMTP_EMAIL,
-            pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
-        },
-    });
-
     try {
-        await transporter.sendMail(message);
+        await sgMail.send(message);
 
         res.status(200).end();
     } catch (error) {
