@@ -1,13 +1,12 @@
-import sgMail from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from "next";
 
-sgMail.setApiKey(process.env.SENDGRID_KEY ?? "");
+const MAILTRAP_API_TOKEN = process.env.MAILTRAP_API_TOKEN;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     const message = {
-        from: process.env.SENDGRID_MAIL ?? "",
-        to: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
+        from: { email: process.env.NEXT_PUBLIC_SMTP_FROM_EMAIL, name: "Landing Page AKTIE" },
+        to: [{ email: process.env.MAIL_TO }],
         subject: "Contato landing page AKTIE",
         text: req.body.email + req.body.message,
         html: `<h3>Contato formulário Landing Page</h3>
@@ -19,7 +18,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     };
 
     try {
-        await sgMail.send(message);
+        const mailRes = await fetch(process.env.MAIL_TRAP_URL ?? "", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${MAILTRAP_API_TOKEN}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(message),
+        });
+
+        if (!mailRes.ok) {
+            throw new Error("Failed to send email");
+        }
 
         res.status(200).end();
     } catch (error) {
