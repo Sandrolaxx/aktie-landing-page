@@ -5,6 +5,7 @@ export default function ReCaptcha({ onCompleteChallenge, refCaptcha }: IReCaptch
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
     return (
+        // @ts-ignore
         <ReCAPTCHA ref={refCaptcha} sitekey={siteKey} onChange={onCompleteChallenge} />
     );
 }
