@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import AktieIcon from "../assets/icons/aktLogo.svg";
@@ -42,11 +43,13 @@ export default function Menu({ showMobileMenu, setShowMobileMenu }: IMenuProps) 
                         </a>
                     </span>
                     <span className="w-full flex justify-center animate-fade-up mt-2 sm:ml-0 sm:w-1/6">
-                        {isDarkTheme(theme!) ?
-                            <AktieIconDark className={`w-20 h-14 lg:w-24 lg:h-24 ${small && 'h-10 w-10 lg:w-14 lg:h-12'}`} />
-                            :
-                            <AktieIcon className={`w-20 h-14 lg:w-24 lg:h-24 ${small && 'h-10 w-10 lg:w-14 lg:h-12'}`} />
-                        }
+                        <Link href="/" className="cursor-pointer">
+                            {isDarkTheme(theme!) ?
+                                <AktieIconDark className={`w-20 h-14 lg:w-24 lg:h-24 ${small && 'h-10 w-10 lg:w-14 lg:h-12'}`} />
+                                :
+                                <AktieIcon className={`w-20 h-14 lg:w-24 lg:h-24 ${small && 'h-10 w-10 lg:w-14 lg:h-12'}`} />
+                            }
+                        </Link>
                     </span>
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down">
                         <a href="#team" className={`group text-center text-lg hover:text-xl font-medium

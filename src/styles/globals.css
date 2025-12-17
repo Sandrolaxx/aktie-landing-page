@@ -1,8 +1,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-primary: #FF5F05;
+  --color-secondary: #9453E5;
+  --color-dark-mode: #111213;
+  
+  --font-family-sans: "Exo", ui-sans-serif, system-ui, sans-serif;
+  
+  --height-default: 88%;
+  
+  --animate-gradient-x: gradientX 10s ease infinite;
+  --animate-gradient-y: gradientY 10s ease infinite;
+  --animate-gradient-xy: gradientXY 10s ease infinite;
+  --animate-fade-down: fadeDown 1s ease-in-out;
+  --animate-fade-up: fadeUp 1s ease-in-out;
+  --animate-fade-left: fadeLeft 1s;
+  --animate-fade-right: fadeRight 1s;
+  --animate-fade-in: fadeIn 3s;
+  --animate-fade-out: fadeOut 3s;
+  --animate-fade-in-fast: fadeIn 1s;
+  --animate-fade-in-slow: fadeIn 5s;
+  --animate-ping-one: ping 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes gradientY {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: center top;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: center center;
+  }
+}
+
+@keyframes gradientX {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes gradientXY {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 html,
 body {
