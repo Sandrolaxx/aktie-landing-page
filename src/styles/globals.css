@@ -5,6 +5,7 @@
   --color-primary: #FF5F05;
   --color-secondary: #9453E5;
   --color-dark-mode: #111213;
+  --color-light-mode: #FFFFFF;
   
   --font-family-sans: "Exo", ui-sans-serif, system-ui, sans-serif;
   
@@ -23,6 +24,8 @@
   --animate-fade-in-slow: fadeIn 5s;
   --animate-ping-one: ping 1s cubic-bezier(0, 0, 0.2, 1);
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @keyframes gradientY {
   0%, 100% {

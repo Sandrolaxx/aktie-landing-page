@@ -20,7 +20,7 @@ export default function Contact() {
                                 <div className=" relative ">
                                     <input id="name" type="text" onChange={handleChange}
                                         value={formFields.name} required placeholder="Nome"
-                                        className="rounded-lg border-transparent flex-1 appearance-none border 
+                                        className="rounded-lg flex-1 appearance-none border 
                                         border-gray-300 w-full py-2 px-4 text-gray-700 placeholder-gray-400 
                                         focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
                                         dark:focus:ring-secondary dark:text-white" />
@@ -29,7 +29,7 @@ export default function Contact() {
                             <div className="col-span-2 lg:col-span-1">
                                 <div className="relative">
                                     <input type="email" required id="email" onChange={handleChange}
-                                        value={formFields.email} placeholder="E-mail" className="rounded-lg border-transparent
+                                        value={formFields.email} placeholder="E-mail" className="rounded-lg
                                         flex-1 appearance-none border border-gray-300 w-full py-2 px-4 
                                         text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary 
                                         focus:border-transparent dark:focus:ring-secondary dark:text-white" />
@@ -40,7 +40,7 @@ export default function Contact() {
                                     <textarea placeholder="Descreva brevemente o serviço requerido ou dúvida"
                                         id="message" name="comment" value={formFields.message} onChange={handleChange}
                                         rows={3} cols={70} required className="w-full py-2 px-4 rounded-lg 
-                                        border-transparent flex-1 appearance-none border border-gray-300 
+                                        flex-1 appearance-none border border-gray-300 
                                         text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2
                                         focus:ring-primary focus:border-transparent dark:focus:ring-secondary
                                         dark:text-white resize-none">
