@@ -14,6 +14,7 @@ export interface ILottieProps {
 
 export interface IMenuProps {
     showMobileMenu: boolean;
+    renderMobileMenuIcon?: boolean;
     setShowMobileMenu: Dispatch<SetStateAction<boolean>>;
 }
 

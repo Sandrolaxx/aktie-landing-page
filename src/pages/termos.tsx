@@ -4,7 +4,6 @@ import Menu from "../components/Menu";
 
 export default function Termos() {
     const [mounted, setMounted] = useState(false);
-    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -21,8 +20,8 @@ export default function Termos() {
                 <meta name="description" content="Termos de Uso do aplicativo Sons Rodrigo Faro" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={`h-full ${showMobileMenu && 'overflow-y-hidden'}`}>
-                <Menu showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu} />
+            <main className={"h-full"}>
+                <Menu showMobileMenu={false} setShowMobileMenu={() => {}} renderMobileMenuIcon={false} />
                 
                 <div className="container mx-auto px-4 py-20 max-w-4xl">
                     <h1 className="text-4xl font-bold mb-8">Termos de Uso - Sons Rodrigo Faro</h1>

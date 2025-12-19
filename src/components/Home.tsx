@@ -26,8 +26,8 @@ export default function Home() {
                         </span>
                     </p>
                     <div className="w-full h-36 flex justify-center items-center mt-2">
-                        <span className="w-40 h-14 flex justify-center items-center mx-6 border rounded-full
-                                bg-linear-to-r from-primary via-red-500 to-secondary
+                        <span className="w-40 h-14 flex justify-center items-center mx-6 rounded-full
+                                bg-linear-to-r from-primary via-red-500 to-secondary dark:border hover:border
                                 hover:-translate-y-1 hover:border-purple-400 duration-100 ease-in animate-fade-up">
                             <a href="#contact" className="text-white font-medium sm:text-lg whitespace-nowrap">
                                 Contate-nos
