@@ -1,10 +1,9 @@
 import Image from "next/image";
-import MemberOne from "../assets/images/team_member_01.jpg";
-import MemberTwo from "../assets/images/team_member_02.jpg";
-import MemberThree from "../assets/images/team_member_03.jpg";
-import MemberFour from "../assets/images/team_member_04.jpg";
-import MemberFive from "../assets/images/team_member_05.jpg";
-import MemberSix from "../assets/images/team_member_06.jpg";
+import MemberOne from "../assets/images/team_member_01.png";
+import MemberTwo from "../assets/images/team_member_02.png";
+import MemberThree from "../assets/images/team_member_03.png";
+import MemberFour from "../assets/images/team_member_04.png";
+import MemberFive from "../assets/images/team_member_05.png";
 
 export default function Team() {
     return (
@@ -31,25 +30,25 @@ export default function Team() {
                         </p>
                     </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberThree} alt="Mobile Dev" />
+                        <Image className="w-full h-full rounded-full" src={MemberOne} alt="Mobile Dev" />
                         <p className="mt-4 text-sm font-medium text-center md:text-base">
                             Mobile Developer
                         </p>
                     </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberFour} alt="Mobile Dev" />
+                        <Image className="w-full h-full rounded-full" src={MemberThree} alt="Mobile Dev" />
                         <p className="mt-4 text-sm font-medium text-center md:text-base">
                             UI/UX Designer
                         </p>
                     </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberFive} alt="Mobile Dev" />
+                        <Image className="w-full h-full rounded-full" src={MemberFour} alt="Mobile Dev" />
                         <p className="mt-4 text-sm font-medium text-center md:text-base">
                             DevOps & Infra
                         </p>
                     </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberSix} alt="Mobile Dev" />
+                        <Image className="w-full h-full rounded-full" src={MemberFive} alt="Mobile Dev" />
                         <p className="mt-4 text-sm font-medium text-center md:text-base">
                             Data Scientist
                         </p>
