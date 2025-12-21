@@ -27,16 +27,14 @@ export default function Menu({ showMobileMenu, setShowMobileMenu, renderMobileMe
                         <a href="#home" className={`group text-center text-lg hover:text-xl font-medium
                                 hover:text-primary lg:text-xl ${small && 'text-md lg:text-lg'}`}>
                             Home
-                            <hr className="hidden group-hover:flex w-24 h-0.5 bg-primary 
-                                    dark:bg-primary animate-fade-down" />
+                            <div className="hidden group-hover:flex w-24 h-0.5 bg-primary/50 dark:bg-primary animate-fade-down" />
                         </a>
                     </span>
                     <span className="w-1/6 hidden sm:flex items-center justify-center animate-fade-down">
                         <a href="#solutions" className={`group text-center text-lg hover:text-xl font-medium
                                 hover:text-primary lg:text-xl ${small && 'text-md lg:text-lg'}`}>
                             Soluções
-                            <hr className="hidden group-hover:flex w-24 h-0.5 bg-primary 
-                                    dark:bg-primary animate-fade-down" />
+                            <div className="hidden group-hover:flex w-24 h-0.5 bg-primary/50 dark:bg-primary animate-fade-down" />
                         </a>
                     </span>
                     <span className="w-full flex justify-center animate-fade-up mt-2 sm:ml-0 sm:w-1/6">
@@ -52,8 +50,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu, renderMobileMe
                         <a href="#team" className={`group text-center text-lg hover:text-xl font-medium
                                 hover:text-secondary lg:text-xl ${small && 'text-md lg:text-lg'}`}>
                             Time
-                            <hr className="hidden group-hover:flex w-24 h-0.5 bg-secondary 
-                                    dark:bg-secondary animate-fade-down" />
+                            <div className="hidden group-hover:flex w-24 h-0.5 bg-secondary/50 dark:bg-secondary animate-fade-down" />
                         </a>
                     </span>
 
@@ -61,8 +58,7 @@ export default function Menu({ showMobileMenu, setShowMobileMenu, renderMobileMe
                         <a href="#contact" className={`group text-center text-lg hover:text-xl font-medium
                                 hover:text-secondary lg:text-xl ${small && 'text-md lg:text-lg'}`}>
                             Contato
-                            <hr className="hidden group-hover:flex w-24 h-0.5 bg-secondary 
-                                    dark:bg-secondary animate-fade-down" />
+                            <div className="hidden group-hover:flex w-24 h-0.5 bg-secondary/50 dark:bg-secondary animate-fade-down" />
                         </a>
                     </span>
 
@@ -91,32 +87,28 @@ export default function Menu({ showMobileMenu, setShowMobileMenu, renderMobileMe
                             <a href="#home" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-primary lg:text-xl lg:hover:text-2xl">
                                 Home
-                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-primary 
-                                    dark:bg-primary animate-fade-up" />
+                                <div className="hidden group-hover:flex w-32 h-0.5 bg-primary/50 dark:bg-primary animate-fade-up" />
                             </a>
                         </button>
                         <button className={`flex w-full h-20 justify-center items-center`}>
                             <a href="#solutions" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-primary lg:text-xl lg:hover:text-2xl">
                                 Soluções
-                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-primary 
-                                    dark:bg-primary animate-fade-up" />
+                                <div className="hidden group-hover:flex w-32 h-0.5 bg-primary/50 dark:bg-primary animate-fade-up" />
                             </a>
                         </button>
                         <button className={`flex w-full h-20 justify-center items-center`}>
                             <a href="#team" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-secondary lg:text-xl lg:hover:text-2xl">
                                 Time
-                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-secondary 
-                                    dark:bg-secondary animate-fade-up" />
+                                <div className="hidden group-hover:flex w-32 h-0.5 bg-secondary/50 dark:bg-secondary animate-fade-up" />
                             </a>
                         </button>
                         <button className={`flex w-full h-20 justify-center items-center`}>
                             <a href="#contact" onClick={() => setShowMobileMenu(false)} className="group text-lg hover:text-xl font-medium
                                 hover:text-secondary lg:text-xl lg:hover:text-2xl">
                                 Contato
-                                <hr className="hidden group-hover:flex w-32 h-0.5 bg-secondary 
-                                    dark:bg-secondary animate-fade-up" />
+                                <div className="hidden group-hover:flex w-32 h-0.5 bg-secondary/50 dark:bg-secondary animate-fade-up" />
                             </a>
                         </button>
                     </nav>

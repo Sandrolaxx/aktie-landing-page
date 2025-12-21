@@ -7,7 +7,7 @@ export default function Contact() {
     return (
         <div id="contact" className="w-full h-default flex flex-col items-center mt-24 sm:mt-0">
             <span className="w-3/4 h-24 pt-24 animate-fade-up">
-                <hr className="h-0.5 bg-primary dark:bg-secondary rounded-full" />
+                <div className="h-0.5 w-full bg-primary/50 dark:bg-secondary rounded-full" />
             </span>
             <div className="w-full h-full flex flex-col items-center">
                 <p className="text-2xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-3xl sm:py-10">
@@ -51,7 +51,7 @@ export default function Contact() {
                                 <button type="submit" className={`w-full py-2 px-4 shadow-md ease-in
                                     duration-200  text-white text-center text-base font-semibold rounded-lg 
                                     ${isValidForm() ? `bg-primary hover:bg-orange-600 dark:bg-secondary 
-                                    dark:hover:bg-purple-600` : "bg-slate-500 hover:bg-slate-600"}`}>
+                                    dark:hover:bg-purple-600 cursor-pointer` : "bg-slate-500 hover:bg-slate-600"}`}>
                                     Enviar
                                 </button>
                                 <div className="mt-5">

@@ -51,7 +51,7 @@ export default function Home() {
                         <p className="text-lg font-medium">
                             Responsividade? Deixa conosco!📱
                         </p>
-                        <hr className="w-80 h-0.5 bg-primary dark:bg-secondary" />
+                        <div className="h-0.5 w-80 bg-primary/50 dark:bg-secondary rounded-full" />
                     </div>
                     <Image className="rounded-full md:hidden animate-fade-left" priority
                         src={ClebersImageMobile} alt="Cleber Mascot Responsive" width={500} height={520} />
