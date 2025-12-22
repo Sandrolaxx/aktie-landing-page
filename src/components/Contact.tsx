@@ -10,9 +10,9 @@ export default function Contact() {
                 <div className="h-0.5 w-full bg-primary/50 dark:bg-secondary rounded-full" />
             </span>
             <div className="w-full h-full flex flex-col items-center">
-                <p className="text-2xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-3xl sm:py-10">
-                    Contate-nos
-                </p>
+                <h2 className="text-2xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-3xl sm:py-10">
+                    Entre em Contato - Cascavel e Região
+                </h2>
                 <form onSubmit={handeleSubmit} >
                     <div className="w-full px-6">
                         <div className="grid max-w-3xl grid-cols-2 gap-4 m-auto">

@@ -11,9 +11,9 @@ export default function Technics() {
     return (
         <div className="w-full h-min flex flex-col items-center sm:mb-0">
             <div className="w-full flex flex-col justify-center items-center">
-                <p className="text-xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-2xl sm:pt-10">
-                    Tecnologias
-                </p>
+                <h2 className="text-xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-2xl sm:pt-10">
+                    Tecnologias Modernas de Desenvolvimento
+                </h2>
                 <div className="w-full px-6 grid grid-cols-3 gap-12 place-items-center md:grid-cols-4 lg:w-5/6 lg:grid-cols-7">
                     <span title="Java" className="h-24 w-24 flex justify-center items-center 
                         hover:rounded-lg hover:bg-orange-100">

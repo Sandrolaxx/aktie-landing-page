@@ -12,9 +12,9 @@ export default function Team() {
                 <div className="h-0.5 w-full bg-primary/50 dark:bg-secondary rounded-full" />
             </span>
             <div className="w-full h-full flex flex-col justify-center items-center">
-                <p className="text-2xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-2xl sm:py-10">
-                    Time multidisciplinar
-                </p>
+                <h2 className="text-2xl py-6 text-center md:whitespace-pre-wrap lg:text-left lg:text-2xl sm:py-10">
+                    Time Multidisciplinar de Desenvolvimento
+                </h2>
                 <div className="w-full h-full grid grid-cols-2 gap-12 place-items-center 
                     md:gap-2 md:grid-cols-3 lg:w-3/4">
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">

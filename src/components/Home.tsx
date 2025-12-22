@@ -13,7 +13,7 @@ export default function Home() {
             <div className="h-40 sm:h-56 md:h-24" />
             <div className="w-full flex flex-col items-center md:flex-row md:h-default">
                 <div className="w-full px-12 flex flex-col justify-center items-center md:px-0">
-                    <p className="text-xl animate-fade-left md:whitespace-pre-wrap lg:text-2xl">
+                    <h1 className="text-xl animate-fade-left md:whitespace-pre-wrap lg:text-2xl">
                         <span className="text-primary">
                             Tecnologia de ponta {""}
                         </span>
@@ -24,7 +24,7 @@ export default function Home() {
                         <span className="text-secondary">
                             valor ao seu negócio.
                         </span>
-                    </p>
+                    </h1>
                     <div className="w-full h-36 flex justify-center items-center mt-2">
                         <span className="w-40 h-14 flex justify-center items-center mx-6 rounded-full
                                 bg-linear-to-r from-primary via-red-500 to-secondary dark:border hover:border
