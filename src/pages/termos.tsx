@@ -73,6 +73,12 @@ export default function Termos() {
                             Para dirimir quaisquer dúvidas oriundas deste termo, fica eleito o foro da comarca de Cascavel, PR.
                         </p>
                     </section>
+
+                    <div className="mt-8 pt-8 border-t">
+                        <p>
+                            Veja também nossa <a href="/privacidade" className="text-blue-600 hover:underline! font-semibold">Política de Privacidade</a>.
+                        </p>
+                    </div>
                 </div>
 
                 <footer className="h-14 bottom-14 flex justify-center pt-4">

@@ -83,6 +83,12 @@ export default function Privacidade() {
                             Em caso de dúvidas, entre em contato pelo e-mail: <a href="mailto:sandrolaxx@gmail.com" className="text-blue-600 hover:underline">sandrolaxx@gmail.com</a>.
                         </p>
                     </section>
+
+                    <div className="mt-8 pt-8 border-t">
+                        <p>
+                            Veja também nossos <a href="/termos" className="text-blue-600 hover:underline! font-semibold">Termos de Uso</a>.
+                        </p>
+                    </div>
                 </div>
 
                 <footer className="h-14 bottom-14 flex justify-center pt-4">
