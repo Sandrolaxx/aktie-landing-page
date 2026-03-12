@@ -7,7 +7,7 @@ import MemberFive from "../assets/images/team_member_05.png";
 
 export default function Team() {
     return (
-        <div id="team" className="w-full h-default flex flex-col items-center mb-14 sm:mb-0">
+        <div id="team" className="w-full h-auto flex flex-col items-center pt-20 mb-14 sm:mb-0">
             <span className="w-3/4 h-24 pt-24 animate-fade-up">
                 <div className="h-0.5 w-full bg-primary/50 dark:bg-secondary rounded-full" />
             </span>
@@ -16,23 +16,69 @@ export default function Team() {
                     Time Multidisciplinar de Desenvolvimento
                 </h2>
                 <div className="w-full h-full grid grid-cols-2 gap-12 place-items-center 
-                    md:gap-2 md:grid-cols-3 lg:w-3/4">
+                    md:gap-2 lg:w-3/4">
+                        <div className="w-36 md:w-52 lg:w-56 flex flex-col items-center">
+                            <div className="relative w-full aspect-square">
+                                <Image 
+                                    className="rounded-full object-cover" 
+                                    src={MemberOne} 
+                                    alt="Front-end/Mobile" 
+                                    layout="fill" 
+                                />
+                            </div>
+                            <p className="mt-4 text-sm font-medium text-center md:text-base">
+                                Front-end/Mobile Developer
+                            </p>
+                        </div>
+                        <div className="w-36 md:w-52 lg:w-56 flex flex-col items-center">
+                            <div className="relative w-full aspect-square">
+                                <Image 
+                                    className="rounded-full object-cover" 
+                                    src={MemberTwo} 
+                                    alt="Back-end" 
+                                    layout="fill" 
+                                />
+                            </div>
+                            <p className="mt-4 text-sm font-medium text-center md:text-base">
+                                Back-end Developer
+                            </p>
+                        </div>
+                        <div className="w-36 md:w-52 lg:w-56 flex flex-col items-center">
+                            <div className="relative w-full aspect-square">
+                                <Image 
+                                    className="rounded-full object-cover" 
+                                    src={MemberThree} 
+                                    alt="UI/UX Designer" 
+                                    layout="fill" 
+                                />
+                            </div>
+                            <p className="mt-4 text-sm font-medium text-center md:text-base">
+                                UI/UX Designer
+                            </p>
+                        </div>
+                        <div className="w-36 md:w-52 lg:w-56 flex flex-col items-center">
+                            <div className="relative w-full aspect-square">
+                                <Image 
+                                    className="rounded-full object-cover" 
+                                    src={MemberFive} 
+                                    alt="Data Scientist" 
+                                    layout="fill" 
+                                />
+                            </div>
+                            <p className="mt-4 text-sm font-medium text-center md:text-base">
+                                Data Scientist
+                            </p>
+                        </div>
+                    {/* <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
+                        <Image className="w-full h-full rounded-full" src={MemberOne} alt="Front-end/Mobile" />
+                        <p className="mt-4 text-sm font-medium text-center md:text-base">
+                            Front-end/Mobile Developer
+                        </p>
+                    </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberOne} alt="Back-end" />
+                        <Image className="w-full h-full rounded-full" src={MemberTwo} alt="Back-end" />
                         <p className="mt-4 text-sm font-medium text-center md:text-base">
                             Back-end Developer
-                        </p>
-                    </div>
-                    <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberTwo} alt="Front-end" />
-                        <p className="mt-4 text-sm font-medium text-center md:text-base">
-                            Front-end Developer
-                        </p>
-                    </div>
-                    <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberOne} alt="Mobile Dev" />
-                        <p className="mt-4 text-sm font-medium text-center md:text-base">
-                            Mobile Developer
                         </p>
                     </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
@@ -42,17 +88,11 @@ export default function Team() {
                         </p>
                     </div>
                     <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
-                        <Image className="w-full h-full rounded-full" src={MemberFour} alt="Mobile Dev" />
-                        <p className="mt-4 text-sm font-medium text-center md:text-base">
-                            DevOps & Infra
-                        </p>
-                    </div>
-                    <div className="w-36 h-36 md:w-52 md:h-52 lg:w-56 lg:h-56">
                         <Image className="w-full h-full rounded-full" src={MemberFive} alt="Mobile Dev" />
                         <p className="mt-4 text-sm font-medium text-center md:text-base">
                             Data Scientist
                         </p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div >
