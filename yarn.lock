@@ -2499,9 +2499,9 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-react-svg@^1.0.0:
+next-react-svg@^1.2.0:
   version "1.2.0"
-  resolved "https://registry.npmjs.org/next-react-svg/-/next-react-svg-1.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/next-react-svg/-/next-react-svg-1.2.0.tgz#4bc12840dc763a500b03d60faca2d35832556769"
   integrity sha512-gAC2O5oMRUv/8VfcpaQsbqkI89GtH3q4YwANQ05R0zpyIgQlFt0IBV6Dl3p2AyLFrvhpVbyXfv5ePXxo5lmy6A==
   dependencies:
     svg-react-loader "0.4.6"
